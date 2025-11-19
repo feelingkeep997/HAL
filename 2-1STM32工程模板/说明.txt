@@ -1,0 +1,16 @@
+标准库
+1Start是启动文件
+固件库->libraries->CMSIS->CM3->CoreSupport里面的全部，DeviceSupport下面三个文件还有DeviceSupport->startup->arm里面全部
+在k5{
+添加添加启动文件（启动文件只有一个看江协科技2-2视频31：36）+所有.h and.c文件
+点魔术棒，在c/++的include添加Strat文件的路径
+}
+2User在k5里面添加c文件
+固件库->project直接添加.c和.h
+然后宏定义打开头文件拉到最下面找到“USE_STDPERIPH_DRIVER”
+点魔术棒，在c/++的define添加“USE_STDPERIPH_DRIVER”
+点魔术棒，在c/++的include添加User文件的路径
+lt文件是存放中断函数
+3library存放库函数
+固件库->libraries->STM32->inc和src里面的全部
+在k5里添加全部
