@@ -138,7 +138,7 @@
           </Flash1>
           <bUseTDR>1</bUseTDR>
           <Flash2>BIN\UL2V8M.DLL</Flash2>
-          <Flash3>"" ()</Flash3>
+          <Flash3></Flash3>
           <Flash4></Flash4>
           <pFcarmOut></pFcarmOut>
           <pFcarmGrp></pFcarmGrp>
@@ -530,21 +530,6 @@
               <FileType>1</FileType>
               <FilePath>../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c</FilePath>
             </File>
-            <File>
-              <FileName>stm32f1xx_hal_uart.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_uart.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f1xx_hal_iwdg.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_iwdg.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f1xx_hal_wwdg.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_wwdg.c</FilePath>
-            </File>
           </Files>
         </Group>
         <Group>
@@ -591,34 +576,9 @@
               <FilePath>..\Drivers\BSP\EXTI\EXTI.h</FilePath>
             </File>
             <File>
-              <FileName>USART.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Drivers\BSP\USART\USART.c</FilePath>
-            </File>
-            <File>
-              <FileName>USART.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\Drivers\BSP\USART\USART.h</FilePath>
-            </File>
-            <File>
-              <FileName>IWDG.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Drivers\BSP\IWDG\IWDG.c</FilePath>
-            </File>
-            <File>
-              <FileName>IWDG.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\Drivers\BSP\IWDG\IWDG.h</FilePath>
-            </File>
-            <File>
               <FileName>OLED.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Drivers\BSP\OLED\OLED.c</FilePath>
-            </File>
-            <File>
-              <FileName>OLED_Font.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\Drivers\BSP\OLED\OLED_Font.h</FilePath>
             </File>
             <File>
               <FileName>OLED.h</FileName>
@@ -626,34 +586,29 @@
               <FilePath>..\Drivers\BSP\OLED\OLED.h</FilePath>
             </File>
             <File>
-              <FileName>delay.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Drivers\BSP\delay\delay.c</FilePath>
-            </File>
-            <File>
-              <FileName>delay.h</FileName>
+              <FileName>OLED_Font.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\Drivers\BSP\delay\delay.h</FilePath>
+              <FilePath>..\Drivers\BSP\OLED\OLED_Font.h</FilePath>
             </File>
             <File>
-              <FileName>WWDG.c</FileName>
+              <FileName>Delay.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Drivers\BSP\WWDG\WWDG.c</FilePath>
+              <FilePath>..\Drivers\BSP\DELAY\Delay.c</FilePath>
             </File>
             <File>
-              <FileName>WWDG.h</FileName>
+              <FileName>Delay.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\Drivers\BSP\WWDG\WWDG.h</FilePath>
+              <FilePath>..\Drivers\BSP\DELAY\Delay.h</FilePath>
             </File>
             <File>
-              <FileName>btim.c</FileName>
+              <FileName>PWM.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Drivers\BSP\TIMER\btim.c</FilePath>
+              <FilePath>..\Drivers\BSP\PWM\PWM.c</FilePath>
             </File>
             <File>
-              <FileName>btim.h</FileName>
+              <FileName>PWM.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\Drivers\BSP\TIMER\btim.h</FilePath>
+              <FilePath>..\Drivers\BSP\PWM\PWM.h</FilePath>
             </File>
           </Files>
         </Group>

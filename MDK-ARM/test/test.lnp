@@ -17,17 +17,13 @@
 "test\stm32f1xx_hal_flash.o"
 "test\stm32f1xx_hal_flash_ex.o"
 "test\stm32f1xx_hal_exti.o"
-"test\stm32f1xx_hal_uart.o"
-"test\stm32f1xx_hal_iwdg.o"
-"test\stm32f1xx_hal_wwdg.o"
 "test\system_stm32f1xx.o"
 "test\led.o"
 "test\key.o"
 "test\exti.o"
-"test\usart.o"
-"test\iwdg.o"
 "test\oled.o"
 "test\delay.o"
+"test\pwm.o"
 --strict --scatter "test\test.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
