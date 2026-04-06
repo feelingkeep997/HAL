@@ -1,0 +1,19 @@
+# Keil 编译产生的临时文件
+*.d
+*.crf
+*.o
+*.lnp
+*.map
+*.lst
+*.htm
+*.build_log.htm
+*.dep
+*.axf
+*.sct
+
+# 编译输出目录
+MDK-ARM/test/
+MDK-ARM/DebugConfig/
+
+# VS Code 缓存
+.vscode/
