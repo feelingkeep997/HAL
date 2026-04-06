@@ -2,7 +2,8 @@
 /**
   ******************************************************************************
   * @file         stm32f1xx_hal_msp.c
-  * @brief        此文件提供 MSP 初始化和去初始化代码
+  * @brief        此文件提供MSP（MCU Support Package）初始化和去初始化代码
+  * @note         MSP层是HAL库与底层硬件之间的桥梁，负责时钟使能、GPIO配置、中断配置等
   ******************************************************************************
   * @attention
   *
@@ -57,8 +58,14 @@
 /* USER CODE BEGIN 0 */
 
 /* USER CODE END 0 */
+
 /**
-  * 初始化全局 MSP
+  * @brief  全局MSP初始化函数（在HAL_Init()中被调用）
+  *         负责系统级的底层硬件初始化，包括：
+  *         - 复用功能时钟（AFIO）使能
+  *         - 电源管理（PWR）时钟使能
+  *         - NVIC中断优先级分组设置
+  *         - JTAG/SWD调试接口重映射配置
   */
 void HAL_MspInit(void)
 {
@@ -66,15 +73,17 @@ void HAL_MspInit(void)
 
   /* USER CODE END MspInit 0 */
 
-  __HAL_RCC_AFIO_CLK_ENABLE();
-  __HAL_RCC_PWR_CLK_ENABLE();
+  __HAL_RCC_AFIO_CLK_ENABLE();   // 使能AFIO复用功能时钟（用于引脚重映射和中断配置）
+  __HAL_RCC_PWR_CLK_ENABLE();     // 使能PWR电源控制时钟
 
+  // 设置NVIC中断优先级分组：抢占优先级2位，子优先级2位
   HAL_NVIC_SetPriorityGrouping(NVIC_PRIORITYGROUP_2);
 
   /* 系统中断初始化*/
 
-  /** NOJTAG: JTAG-DP 禁用，SW-DP 启用
-  */
+  /** NOJTAG: 禁用JTAG-DP调试端口，保留SW-DP串行调试端口
+   *  这样可以释放PB3、PB4、PA15三个引脚作为普通GPIO使用
+   */
   __HAL_AFIO_REMAP_SWJ_NOJTAG();
 
   /* USER CODE BEGIN MspInit 1 */

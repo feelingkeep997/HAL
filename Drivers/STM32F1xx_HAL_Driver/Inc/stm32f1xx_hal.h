@@ -2,8 +2,7 @@
   ******************************************************************************
   * @file    stm32f1xx_hal.h
   * @author  MCD Application Team
-  * @brief   This file contains all the functions prototypes for the HAL
-  *          module driver.
+  * @brief   此文件包含HAL模块驱动程序的所有函数原型声明
   ******************************************************************************
   * @attention
   *
@@ -18,7 +17,7 @@
   ******************************************************************************
   */
 
-/* Define to prevent recursive inclusion -------------------------------------*/
+/* 定义防止递归包含 -----------------------------------------------------------*/
 #ifndef __STM32F1xx_HAL_H
 #define __STM32F1xx_HAL_H
 
@@ -37,13 +36,13 @@ extern "C" {
   * @{
   */
 
-/* Exported constants --------------------------------------------------------*/
+/* 导出常量 ------------------------------------------------------------------*/
 
-/** @defgroup HAL_Exported_Constants HAL Exported Constants
+/** @defgroup HAL_Exported_Constants HAL导出常量
   * @{
   */
 
-/** @defgroup HAL_TICK_FREQ Tick Frequency
+/** @defgroup HAL_TICK_FREQ 滴答定时器频率（Tick Frequency）
   * @{
   */
 typedef enum
@@ -56,7 +55,7 @@ typedef enum
 /**
   * @}
   */
-/* Exported types ------------------------------------------------------------*/
+/* 导出类型 ------------------------------------------------------------------*/
 extern __IO uint32_t uwTick;
 extern uint32_t uwTickPrio;
 extern HAL_TickFreqTypeDef uwTickFreq;
@@ -64,26 +63,26 @@ extern HAL_TickFreqTypeDef uwTickFreq;
 /**
   * @}
   */
-/* Exported macro ------------------------------------------------------------*/
-/** @defgroup HAL_Exported_Macros HAL Exported Macros
+/* 导出宏 --------------------------------------------------------------------*/
+/** @defgroup HAL_Exported_Macros HAL导出宏
   * @{
   */
 
-/** @defgroup DBGMCU_Freeze_Unfreeze Freeze Unfreeze Peripherals in Debug mode
-  * @brief   Freeze/Unfreeze Peripherals in Debug mode
-  * Note: On devices STM32F10xx8 and STM32F10xxB,
-  *                  STM32F101xC/D/E and STM32F103xC/D/E,
-  *                  STM32F101xF/G and STM32F103xF/G
-  *                  STM32F10xx4 and STM32F10xx6
-  *       Debug registers DBGMCU_IDCODE and DBGMCU_CR are accessible only in
-  *       debug mode (not accessible by the user software in normal mode).
-  *       Refer to errata sheet of these devices for more details.
+/** @defgroup DBGMCU_Freeze_Unfreeze 调试模式下冻结/解冻外设
+  * @brief   在调试模式下冻结/解冻外设
+  * 注意：在STM32F10xx8、STM32F10xxB、
+  *       STM32F101xC/D/E、STM32F103xC/D/E、
+  *       STM32F101xF/G、STM32F103xF/G、
+  *       STM32F10xx4和STM32F10xx6设备上，
+  *       调试寄存器DBGMCU_IDCODE和DBGMCU_CR仅在调试模式下可访问
+  *       （正常模式下用户软件无法访问）。
+  *       更多详情请参考这些设备的勘误表。
   * @{
   */
 
-/* Peripherals on APB1 */
+/* APB1总线上的外设 */
 /**
-  * @brief  TIM2 Peripherals Debug mode
+  * @brief  TIM2定时器调试模式
   */
 #define __HAL_DBGMCU_FREEZE_TIM2()            SET_BIT(DBGMCU->CR, DBGMCU_CR_DBG_TIM2_STOP)
 #define __HAL_DBGMCU_UNFREEZE_TIM2()          CLEAR_BIT(DBGMCU->CR, DBGMCU_CR_DBG_TIM2_STOP)
@@ -151,26 +150,26 @@ extern HAL_TickFreqTypeDef uwTickFreq;
 #endif
 
 /**
-  * @brief  WWDG Peripherals Debug mode
+  * @brief  WWDG窗口看门狗调试模式
   */
 #define __HAL_DBGMCU_FREEZE_WWDG()            SET_BIT(DBGMCU->CR, DBGMCU_CR_DBG_WWDG_STOP)
 #define __HAL_DBGMCU_UNFREEZE_WWDG()          CLEAR_BIT(DBGMCU->CR, DBGMCU_CR_DBG_WWDG_STOP)
 
 /**
-  * @brief  IWDG Peripherals Debug mode
+  * @brief  IWDG独立看门狗调试模式
   */
 #define __HAL_DBGMCU_FREEZE_IWDG()            SET_BIT(DBGMCU->CR, DBGMCU_CR_DBG_IWDG_STOP)
 #define __HAL_DBGMCU_UNFREEZE_IWDG()          CLEAR_BIT(DBGMCU->CR, DBGMCU_CR_DBG_IWDG_STOP)
 
 /**
-  * @brief  I2C1 Peripherals Debug mode
+  * @brief  I2C1外设调试模式（SMBUS超时）
   */
 #define __HAL_DBGMCU_FREEZE_I2C1_TIMEOUT()    SET_BIT(DBGMCU->CR, DBGMCU_CR_DBG_I2C1_SMBUS_TIMEOUT)
 #define __HAL_DBGMCU_UNFREEZE_I2C1_TIMEOUT()  CLEAR_BIT(DBGMCU->CR, DBGMCU_CR_DBG_I2C1_SMBUS_TIMEOUT)
 
 #if defined (DBGMCU_CR_DBG_I2C2_SMBUS_TIMEOUT)
 /**
-  * @brief  I2C2 Peripherals Debug mode
+  * @brief  I2C2外设调试模式（SMBUS超时）
   */
 #define __HAL_DBGMCU_FREEZE_I2C2_TIMEOUT()    SET_BIT(DBGMCU->CR, DBGMCU_CR_DBG_I2C2_SMBUS_TIMEOUT)
 #define __HAL_DBGMCU_UNFREEZE_I2C2_TIMEOUT()  CLEAR_BIT(DBGMCU->CR, DBGMCU_CR_DBG_I2C2_SMBUS_TIMEOUT)
@@ -178,7 +177,7 @@ extern HAL_TickFreqTypeDef uwTickFreq;
 
 #if defined (DBGMCU_CR_DBG_CAN1_STOP)
 /**
-  * @brief  CAN1 Peripherals Debug mode
+  * @brief  CAN1外设调试模式
   */
 #define __HAL_DBGMCU_FREEZE_CAN1()            SET_BIT(DBGMCU->CR, DBGMCU_CR_DBG_CAN1_STOP)
 #define __HAL_DBGMCU_UNFREEZE_CAN1()          CLEAR_BIT(DBGMCU->CR, DBGMCU_CR_DBG_CAN1_STOP)
@@ -186,13 +185,13 @@ extern HAL_TickFreqTypeDef uwTickFreq;
 
 #if defined (DBGMCU_CR_DBG_CAN2_STOP)
 /**
-  * @brief  CAN2 Peripherals Debug mode
+  * @brief  CAN2外设调试模式
   */
 #define __HAL_DBGMCU_FREEZE_CAN2()            SET_BIT(DBGMCU->CR, DBGMCU_CR_DBG_CAN2_STOP)
 #define __HAL_DBGMCU_UNFREEZE_CAN2()          CLEAR_BIT(DBGMCU->CR, DBGMCU_CR_DBG_CAN2_STOP)
 #endif
 
-/* Peripherals on APB2 */
+/* APB2总线上的外设 */
 #if defined (DBGMCU_CR_DBG_TIM1_STOP)
 /**
   * @brief  TIM1 Peripherals Debug mode
@@ -262,7 +261,7 @@ extern HAL_TickFreqTypeDef uwTickFreq;
   * @}
   */
 
-/** @defgroup HAL_Private_Macros HAL Private Macros
+/** @defgroup HAL_Private_Macros HAL私有宏
   * @{
   */
 #define IS_TICKFREQ(FREQ) (((FREQ) == HAL_TICK_FREQ_10HZ)  || \
@@ -272,14 +271,14 @@ extern HAL_TickFreqTypeDef uwTickFreq;
   * @}
   */
 
-/* Exported functions --------------------------------------------------------*/
+/* 导出函数 ------------------------------------------------------------------*/
 /** @addtogroup HAL_Exported_Functions
   * @{
   */
 /** @addtogroup HAL_Exported_Functions_Group1
   * @{
   */
-/* Initialization and de-initialization functions  ******************************/
+/* 初始化和去初始化函数 ********************************************************/
 HAL_StatusTypeDef HAL_Init(void);
 HAL_StatusTypeDef HAL_DeInit(void);
 void HAL_MspInit(void);
@@ -292,11 +291,11 @@ HAL_StatusTypeDef HAL_InitTick(uint32_t TickPriority);
 /** @addtogroup HAL_Exported_Functions_Group2
   * @{
   */
-/* Peripheral Control functions  ************************************************/
-void HAL_IncTick(void);
-void HAL_Delay(uint32_t Delay);
-uint32_t HAL_GetTick(void);
-uint32_t HAL_GetTickPrio(void);
+/* 外设控制函数 *****************************************************************/
+void HAL_IncTick(void);                    // 增加滴答计数器
+void HAL_Delay(uint32_t Delay);            // 毫秒级延时函数
+uint32_t HAL_GetTick(void);                // 获取当前滴答计数值
+uint32_t HAL_GetTickPrio(void);            // 获取滴答中断优先级
 HAL_StatusTypeDef HAL_SetTickFreq(HAL_TickFreqTypeDef Freq);
 HAL_TickFreqTypeDef HAL_GetTickFreq(void);
 void HAL_SuspendTick(void);

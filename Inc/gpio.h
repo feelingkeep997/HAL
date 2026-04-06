@@ -1,7 +1,8 @@
 /**
   ******************************************************************************
   * @file    gpio.h
-  * @brief   此文件包含 gpio.c 文件的所有函数原型
+  * @brief   此文件包含gpio.c文件的所有函数原型和声明
+  * @note    由STM32CubeMX自动生成
   ******************************************************************************
   * @attention
   *
@@ -34,6 +35,7 @@ extern "C" {
 
 /* USER CODE END Private defines */
 
+// GPIO初始化函数（配置所有使用到的GPIO引脚）
 void MX_GPIO_Init(void);
 
 /* USER CODE BEGIN Prototypes */
@@ -43,6 +45,6 @@ void MX_GPIO_Init(void);
 #ifdef __cplusplus
 }
 #endif
-#endif /*__ GPIO_H__ */
+#endif /*__GPIO_H__*/
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

@@ -2,8 +2,9 @@
 /**
   ******************************************************************************
   * @file           : main.h
-  * @brief          : main.c 文件的头文件
-  *                   此文件包含应用程序的通用定义
+  * @brief          : main.c文件的头文件
+  *                   此文件包含应用程序的通用定义（引脚宏定义、函数声明等）
+  * @note           由STM32CubeMX自动生成，用户可在USER CODE区域添加自定义内容
   ******************************************************************************
   * @attention
   *
@@ -51,6 +52,7 @@ extern "C" {
 /* USER CODE END EM */
 
 /* 导出函数原型 --------------------------------------------------------------*/
+// 错误处理函数（当系统发生不可恢复的错误时调用）
 void Error_Handler(void);
 
 /* USER CODE BEGIN EFP */
@@ -58,8 +60,10 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* 私有定义 ------------------------------------------------------------------*/
-#define LED_Pin GPIO_PIN_2
-#define LED_GPIO_Port GPIOA
+// LED引脚宏定义（由STM32CubeMX根据配置自动生成）
+#define LED_Pin GPIO_PIN_2       // LED使用的GPIO引脚号（PA2）
+#define LED_GPIO_Port GPIOA      // LED所在的GPIO端口（GPIOA）
+
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */
