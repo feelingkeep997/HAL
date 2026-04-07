@@ -14,7 +14,7 @@ void gtim_pwn_chy_init(uint16_t arr, uint16_t psc)
 
     timx_oc_pwm_chy.Pulse = arr / 2;
     timx_oc_pwm_chy.OCMode = TIM_OCMODE_PWM1;
-    timx_oc_pwm_chy.OCPolarity = TIM_OCPOLARITY_LOW;
+    timx_oc_pwm_chy.OCPolarity = TIM_OCPOLARITY_HIGH; // 共阴极：高电平点亮，占空比越大越亮
     HAL_TIM_PWM_ConfigChannel(&gtim_pwn_chy_handle, &timx_oc_pwm_chy, TIM_CHANNEL_2);
 
     HAL_TIM_PWM_Start(&gtim_pwn_chy_handle, TIM_CHANNEL_2);

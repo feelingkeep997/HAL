@@ -1,6 +1,8 @@
 
+
 #include "main.h"
 #include "gpio.h"
+#include <math.h>
 #include "../Drivers/BSP/LED/LED.h"
 #include "../Drivers/BSP/KEY/KEY.h"
 #include "../Drivers/BSP/EXTI/EXTI.h"
@@ -25,37 +27,22 @@ int main(void)
   // 初始化OLED并显示测试字符
   OLED_Init();
   OLED_ShowString(1, 1, "cwh");
-  // 初始化PWM (周期为500, 预分频为71)
+  // 初始化PWM (ARR=499, PSC=71 → TIM2时钟1MHz, PWM频率2kHz)
   gtim_pwn_chy_init(500 - 1, 72 - 1);
   
   uint16_t pwm_val = 0;
-  uint8_t dir = 1;
+  float angle = 0;
 
   while (1)
   {
-    // 实现呼吸灯(流水灯)效果
-    if (dir)
-    {
-      pwm_val++;
-      if (pwm_val > 300)
-      {
-        dir = 0;
-      }
-    }
-    else
-    {
-      pwm_val--;
-      if (pwm_val == 0)
-      {
-        dir = 1;
-      }
-    }
+    // 正弦波呼吸灯：TIM2_CH2(PB3), 平滑渐变, 周期约2秒
+    pwm_val = (uint16_t)(300 * (sin(angle) + 1.0f) / 2.0f);
     
     // 修改TIM2 Channel2的PWM比较值
     __HAL_TIM_SET_COMPARE(&gtim_pwn_chy_handle, TIM_CHANNEL_2, pwm_val);
     
-    // 延时控制呼吸速度
-    Delay_ms(2);
+    angle += 0.05f;  // 控制呼吸速度
+    Delay_ms(20);
   }
 }
 

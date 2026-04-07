@@ -1,6 +1,6 @@
 Dependencies for Project 'test', Target 'test': (DO NOT MODIFY !)
 F (startup_stm32f103xb.s)(0x69AE7194)(--cpu Cortex-M3 -g --apcs=interwork -I.\RTE\_test-ID:\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include--pd "__UVISION_VERSION SETA 524" --pd "_RTE_ SETA 1" --pd "STM32F10X_MD SETA 1"--list startup_stm32f103xb.lst --xref -o test\startup_stm32f103xb.o --depend test\startup_stm32f103xb.d)
-F (../Src/main.c)(0x69D3E589)(--c99 -c --cpu Cortex-M3 -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/Include-I.\RTE\_test-ID:\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o test\main.o --omf_browse test\main.crf --depend test\main.d)
+F (../Src/main.c)(0x69D466A5)(--c99 -c --cpu Cortex-M3 -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/Include-I.\RTE\_test-ID:\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o test\main.o --omf_browse test\main.crf --depend test\main.d)
 I (../Inc/main.h)(0x69AE7352)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x69882D50)
 I (../Inc/stm32f1xx_hal_conf.h)(0x69D3CEF3)
@@ -30,6 +30,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x69882D50)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x69882D50)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x69882D50)
 I (../Inc/gpio.h)(0x69AE7368)
+I (D:\ARM\ARMCC\include\math.h)(0x588B8344)
 I (../Src/../Drivers/BSP/LED/LED.h)(0x69AEA23E)
 I (../Src/../Drivers/BSP/KEY/KEY.h)(0x69AF8E0A)
 I (../Src/../Drivers/BSP/EXTI/EXTI.h)(0x69B50570)
@@ -671,7 +672,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x69882D50)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x69882D50)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x69882D50)
 F (..\Drivers\BSP\DELAY\Delay.h)(0x69D3E3FC)()
-F (..\Drivers\BSP\PWM\PWM.c)(0x69D3E5C0)(--c99 -c --cpu Cortex-M3 -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/Include-I.\RTE\_test-ID:\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o test\pwm.o --omf_browse test\pwm.crf --depend test\pwm.d)
+F (..\Drivers\BSP\PWM\PWM.c)(0x69D465BF)(--c99 -c --cpu Cortex-M3 -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Drivers/BSP/Include-I.\RTE\_test-ID:\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o test\pwm.o --omf_browse test\pwm.crf --depend test\pwm.d)
 I (..\Drivers\BSP\PWM\PWM.h)(0x69D3E334)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x69882D50)
 I (../Inc/stm32f1xx_hal_conf.h)(0x69D3CEF3)

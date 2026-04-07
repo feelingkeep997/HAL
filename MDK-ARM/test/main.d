@@ -29,6 +29,7 @@ test\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
 test\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
 test\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
 test\main.o: ../Inc/gpio.h
+test\main.o: D:\ARM\ARMCC\Bin\..\include\math.h
 test\main.o: ../Src/../Drivers/BSP/LED/LED.h
 test\main.o: ../Src/../Drivers/BSP/KEY/KEY.h
 test\main.o: ../Src/../Drivers/BSP/EXTI/EXTI.h
