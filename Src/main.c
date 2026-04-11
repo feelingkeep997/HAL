@@ -3,12 +3,14 @@
 #include "main.h"
 #include "gpio.h"
 #include <math.h>
+#include <stdio.h>
 #include "../Drivers/BSP/LED/LED.h"
 #include "../Drivers/BSP/KEY/KEY.h"
 #include "../Drivers/BSP/EXTI/EXTI.h"
 #include "../Drivers/BSP/OLED/OLED.h"
 #include "../Drivers/BSP/PWM/PWM.h"
 #include "../Drivers/BSP/Delay/Delay.h"
+#include "../Drivers/BSP/PWM/GTIM.h"
 
 void SystemClock_Config(void);
 
@@ -29,19 +31,21 @@ int main(void)
   OLED_ShowString(1, 1, "cwh");
   // 初始化PWM (ARR=499, PSC=71 → TIM2时钟1MHz, PWM频率2kHz)
   gtim_pwn_chy_init(500 - 1, 72 - 1);
-  
+  gtim_timx_cap_init(65535 - 1, 71);
+
   uint16_t pwm_val = 0;
   float angle = 0;
+  char freq_str[16];
 
   while (1)
   {
-    // 正弦波呼吸灯：TIM2_CH2(PB3), 平滑渐变, 周期约2秒
+    sprintf(freq_str, "fx = %.1f", g_freq_hz);
+    OLED_ShowString(2, 1, freq_str);
+
     pwm_val = (uint16_t)(300 * (sin(angle) + 1.0f) / 2.0f);
-    
-    // 修改TIM2 Channel2的PWM比较值
     __HAL_TIM_SET_COMPARE(&gtim_pwn_chy_handle, TIM_CHANNEL_2, pwm_val);
-    
-    angle += 0.05f;  // 控制呼吸速度
+
+    angle += 0.05f;
     Delay_ms(20);
   }
 }
